@@ -1,0 +1,3 @@
+include ':skynet'
+include ':app'
+rootProject.name = "Skynet"
