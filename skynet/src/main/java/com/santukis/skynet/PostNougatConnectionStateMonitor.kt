@@ -21,11 +21,11 @@ internal class PostNougatConnectionStateMonitor(private val context: Context): C
 
     override fun registerNetworkListener(onNetworkConnectionChange: OnNetworkConnectionChange?) {
         this.onNetworkConnectionChange = onNetworkConnectionChange
-        connectivityManager.registerDefaultNetworkCallback(networkCallback)
+        connectivityManager?.registerDefaultNetworkCallback(networkCallback)
     }
 
 
     override fun unregisterNetworkListener() {
-        connectivityManager.unregisterNetworkCallback(networkCallback)
+        connectivityManager?.unregisterNetworkCallback(networkCallback)
     }
 }

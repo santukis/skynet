@@ -24,7 +24,7 @@ internal class PostLollipopConnectionStateMonitor(private val context: Context) 
 
     override fun registerNetworkListener(onNetworkConnectionChange: OnNetworkConnectionChange?) {
         this.onNetworkConnectionChange = onNetworkConnectionChange
-        connectivityManager.registerNetworkCallback(
+        connectivityManager?.registerNetworkCallback(
             NetworkRequest.Builder()
                 .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
                 .addTransportType(NetworkCapabilities.TRANSPORT_WIFI).build(), networkCallback
@@ -33,6 +33,6 @@ internal class PostLollipopConnectionStateMonitor(private val context: Context) 
 
 
     override fun unregisterNetworkListener() {
-        connectivityManager.unregisterNetworkCallback(networkCallback)
+        connectivityManager?.unregisterNetworkCallback(networkCallback)
     }
 }
